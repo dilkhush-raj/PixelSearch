@@ -21,7 +21,7 @@ const Logo = () => {
 
   return (
     <>
-      {!country.toLowerCase() === "india" ? (
+      {country.toLowerCase() === "india" ? (
         <Link to={"/"}>
           <div className="font-bold text-green-500 ">PhotoPixel</div>
         </Link>
