@@ -2,13 +2,17 @@ import { useInView } from "react-intersection-observer";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import axios from "axios";
-import ImageCard from "../components/ImageCard"
+import ImageCard from "../components/ImageCard";
 
 function Home() {
   const fetchImages = async ({ pageParam }) => {
     const API_KEY = "urdmHM6y3XNQaPgEt88QG0ZZWVs1YiN6CQBwZF3ICiYAK5GDHNvlqdgN";
-    const res = await axios.get(`https://api.pexels.com/v1/search`, {
-      params: { query: "plant", page: pageParam, per_page: 10, color:"#00ff00" },
+    const res = await axios.get(`https://api.pexels.com/v1/curated`, {
+      params: {
+        query: "plant",
+        page: pageParam,
+        per_page: 12,
+      },
       headers: {
         Authorization: API_KEY,
       },
@@ -38,12 +42,7 @@ function Home() {
   // console.log(data);
 
   const content = data?.pages?.map((page) =>
-    page.map((item, index) => {
-      console.log(item);
-      if (page.length == index + 1) {
-        console.log("dlf");
-        return <ImageCard innerRef={ref} key={item.id} pic={item} />;
-      }
+    page.map((item) => {
       return <ImageCard key={item.id} pic={item} />;
     })
   );
@@ -64,8 +63,13 @@ function Home() {
 
   return (
     <div className="bg-[#ddd] ">
-      <div className="grid grid-cols-4 gap-2 mx-auto w-max">{content}</div>
-      {isFetchingNextPage && <h3>Loading...</h3>}
+      <div className="grid grid-cols-4 gap-4 p-4">{content}</div>
+      <div ref={ref} className="min-h-10"></div>
+      {isFetchingNextPage && (
+        <div className="flex items-center justify-center text-black min-h-80">
+          Loading...
+        </div>
+      )}
     </div>
   );
 }

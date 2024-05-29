@@ -6,7 +6,7 @@ function Layout() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="mt-[60px] ">
         <Outlet />
       </main>
     </>

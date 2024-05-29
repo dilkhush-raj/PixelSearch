@@ -6,6 +6,7 @@ import './index.css';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Route, Router, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import SearchImageTwo from './pages/SearchImageTwo';
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter(
@@ -13,6 +14,7 @@ const router = createBrowserRouter(
     <Route path='/' element={<Layout />} >
       <Route path='' element={<Home />} />
       <Route path='/image' element={<SearchImage />} />
+      <Route path='/picture' element={<SearchImageTwo />} />
       </Route>
   )
 );
