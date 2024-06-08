@@ -30,6 +30,7 @@ const Logo = () => {
           <div className="font-bold text-red-500 ">PhotoPixel</div>
         </Link>
       )}
+      {country}
     </>
   );
 };
