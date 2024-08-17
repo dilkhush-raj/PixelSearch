@@ -1,4 +1,3 @@
-import React from "react";
 import { useLocation } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import { useInfiniteQuery } from "@tanstack/react-query";
@@ -63,6 +62,7 @@ function SearchImage() {
 
   return (
     <div className="">
+      <div className="absolute bottom-0 right-0 aspect-square h-[10%] rounded-full bg-white hidden"></div>
       <div className="grid grid-cols-4 gap-4 p-4">{content}</div>
       <div ref={ref} className="min-h-10"></div>
       {isFetchingNextPage && (

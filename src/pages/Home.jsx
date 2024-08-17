@@ -3,6 +3,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import axios from "axios";
 import ImageCard from "../components/ImageCard";
+import { Button } from "@raven-ui/react";
 
 function Home() {
   const fetchImages = async ({ pageParam }) => {
@@ -62,7 +63,8 @@ function Home() {
   }
 
   return (
-    <div className="bg-[#ddd] ">
+    <div className="bg-[#ddd] px-5 py-2.5">
+      <Button color="primary">Raven UI</Button>
       <div className="grid grid-cols-4 gap-4 p-4">{content}</div>
       <div ref={ref} className="min-h-10"></div>
       {isFetchingNextPage && (

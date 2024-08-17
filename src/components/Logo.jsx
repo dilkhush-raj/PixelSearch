@@ -1,5 +1,5 @@
 // src/Geolocation.js
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -30,7 +30,6 @@ const Logo = () => {
           <div className="font-bold text-red-500 ">PhotoPixel</div>
         </Link>
       )}
-      {country}
     </>
   );
 };

@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@raven-ui/react": "^0.1.5",
     "@tanstack/react-query": "^5.37.1",
     "axios": "^1.6.8",
+    "class-variance-authority": "^0.7.0",
     "pexels": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
